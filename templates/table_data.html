@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+{% if user.is_authenticated and user.is_superuser%}
+{% block body %}
+<table id = "table" class = "table table-bordered">
+    <thead class = "alert-success">
+    {% for head in field_names %}
+       <th>{{ head }}</th>
+    {% endfor %}
+    </thead>
+    <tbody>
+    {% for row in data %}
+        <tr>
+        {% for cell in row %}
+            <td>{{ cell }}</td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% else %}
+<h1>Hello, {{user.first_name}}</h1>
+{% endif %}

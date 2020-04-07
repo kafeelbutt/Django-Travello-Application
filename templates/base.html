@@ -13,7 +13,7 @@
     border-bottom: 3px solid #FFC300;
 }
     </style>
-<title>Login</title>
+<title>View Data</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travello template project">
@@ -25,6 +25,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css'%}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css'%}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css'%}">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
 </head>
 <body>
 
@@ -174,35 +175,10 @@
 		</div>
     </div>
     <div class="col-md-10 col-md-offset-1">
-        <div class="contact-wrap">
-            <h3>Login</h3>
+            <h3>View Data with DataTables</h3>
             <br>
-            <form action="login"  method = 'post'>
-                {% csrf_token %}
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <label for="username">Username</label>
-                        <input type="text" name = "username" id="username" class="form-control" placeholder="Your Username">
-                    </div>
-                </div>
-
-                <div class="row form-group">
-                    <div class="col-md-12">
-                        <label for="password">Password</label>
-                        <input type="text" name=password id="password" class="form-control" placeholder="Enter Password">
-                    </div>
-                </div>
-
-                <div class="form-group text-center">
-                    <input type="submit" value="Log in" class="btn btn-primary">
-                </div>
-            </form>	
-            <div>
-                    {% for message in messages %}
-                    <h3> {{message}} </h3>
-                    {% endfor %}
-                </div>
-        </div>
+            {% block body %}
+            {% endblock %}
         
     <hr style="border-color:black">
     </div>
@@ -215,5 +191,53 @@
 <script src="{% static 'plugins/easing/easing.js'%}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js'%}"></script>
 <script src="{% static 'js/custom.js'%}"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+<script type = "text/javascript">
+    $(document).ready(function(){
+        $('#table').DataTable();
+    });
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "urf-8" name = "viewport" content = "width=device-width, initial-scale=1"/>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css'%}">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.css"/>
+    </head>
+<body>
+    <nav class = "navbar navbar-default" >
+        <div class = "container-fluid">
+            <a class = "navbar-brand ">Data</a>
+        </div>
+    </nav>
+    <div class = "col-md-3"></div>
+    <div class = "col-md-6 well">
+        <h3 class = "text-primary">View Data with DataTables</h3>
+        <hr style = "border-top:1px dotted #000;"/>
+    </div>
+ 
+</body>
+<script src="{% static 'js/jquery-3.2.1.min.js'%}"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/datatables.min.js"></script>
+<script type = "text/javascript">
+    $(document).ready(function(){
+        $('#table').DataTable();
+    });
+</script>
+</html> -->

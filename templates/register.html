@@ -42,8 +42,8 @@
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
 									<li class="active"><a href="/">Home</a></li>
-									<li><a href="contact.html">Contact</a></li>
 									{% if user.is_authenticated %}
+									<li><a href="view_data">View Data</a></li>
 									<li>Hello, {{user.first_name}}</li>
 									<li><a href="logout">logout</a></li>
 									{% else %}
