@@ -1,0 +1,32 @@
+<h1>Destinations</h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>img</th>
+    <th>desc</th>
+    <th>price</th>
+    <th>offer</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for dest in object_list %}
+    <tr>
+    <td>{{ dest.name }}</td>
+    <td>{{ dest.img }}</td>
+    <td>{{ dest.desc }}</td>
+    <td>{{ dest.price }}</td>
+    <td>{{ dest.offer }}</td>
+    <td><a href="{% url "destination_view" dest.id %}">view</a></td>
+    <td><a href="{% url "update_data" dest.id %}">edit</a></td>
+    <td><a href="{% url "delete_data" dest.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "create_data" %}">New</a>

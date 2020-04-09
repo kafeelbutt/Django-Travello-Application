@@ -2,18 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        .contact-wrap{
-            width:60%;
-            height:400px;
-            margin-left: 240px;
-            margin-top: 90px;
-        }
-.top-menu{
-    border-bottom: 3px solid #FFC300;
-}
-    </style>
-<title>View Data</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travello template project">
@@ -45,8 +33,9 @@
 									<li class="active"><a href="/">Home</a></li>
 									{% if user.is_authenticated %}
 									<li><a href="view_data">View Data</a></li>
-									<li>Hello, {{user.first_name}}</li>
-									<li><a href="logout">logout</a></li>
+									<li><a href="dest_list">CRUD</a></li>
+									<!-- <li>Hello, {{user.first_name}}</li> -->
+									<li><a href="accounts/logout">logout</a></li>
 									{% else %}
 									<li><a href="register">Register</a></li>
 									<li><a href="login">Login</a></li>
@@ -175,10 +164,9 @@
 		</div>
     </div>
     <div class="col-md-10 col-md-offset-1">
-            <h3>View Data with DataTables</h3>
-            <br>
-            {% block body %}
+            {% block content %}
             {% endblock %}
+        </div>
         
     <hr style="border-color:black">
     </div>

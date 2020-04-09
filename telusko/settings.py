@@ -32,13 +32,14 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'travello.apps.TravelloConfig',
+    'accounts.apps.AccountsConfig',
+    'table_data.apps.TableDataConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'datatableview',
 ]
 
 MIDDLEWARE = [

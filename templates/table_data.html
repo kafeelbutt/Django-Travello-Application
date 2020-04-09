@@ -1,7 +1,11 @@
 
 {% extends 'base.html' %}
+{% block content %}
 {% if user.is_authenticated and user.is_superuser%}
-{% block body %}
+<head>
+<title>View Data</title>
+</head>
+<h3 class = "text-primary">View Data with Data Tables</h3>
 <table id = "table" class = "table table-bordered">
     <thead class = "alert-success">
     {% for head in field_names %}
@@ -18,8 +22,9 @@
     {% endfor %}
     </tbody>
 </table>
-{% endblock %}
 
 {% else %}
 <h1>Hello, {{user.first_name}}</h1>
 {% endif %}
+
+{% endblock %}

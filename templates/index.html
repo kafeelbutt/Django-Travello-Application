@@ -34,7 +34,8 @@
 									<li class="active"><a href="/">Home</a></li>
 									{% if user.is_authenticated %}
 									<li><a href="table_data/view_data">View Data</a></li>
-									<li>Hello, {{user.first_name}}</li>
+									<li><a href="table_data/dest_list">CRUD</a></li>
+									<!-- <li>Hello, {{user.first_name}}</li> -->
 									<li><a href="accounts/logout">logout</a></li>
 									{% else %}
 									<li><a href="accounts/register">Register</a></li>
