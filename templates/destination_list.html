@@ -17,10 +17,10 @@
     {% for dest in object_list %}
     <tr>
     <td>{{ dest.name }}</td>
-    <td>{{ dest.img }}</td>
-    <td>{{ dest.desc }}</td>
+    <td>{{ dest.image }}</td>
+    <td>{{ dest.description }}</td>
     <td>{{ dest.price }}</td>
-    <td>{{ dest.offer }}</td>
+    <td>{{ dest.rating }}</td>
     <td><a href="{% url "destination_view" dest.id %}">view</a></td>
     <td><a href="{% url "update_data" dest.id %}">edit</a></td>
     <td><a href="{% url "delete_data" dest.id %}">delete</a></td>
